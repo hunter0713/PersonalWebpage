@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
   padding: theme.spacing(1),
   textAlign: 'center',
   backgroundColor: "#55868C",
+  "&:hover": {
+  background: "#76bac2"
+},
 },
   resumeTitle: {
     marginLeft: theme.spacing(50),
