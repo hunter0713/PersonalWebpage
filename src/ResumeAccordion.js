@@ -51,7 +51,7 @@ export default function ResumeAccordion() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [desc, setDesc] = useState("n/a");
-  const [className, setClassName] = useState("n/a")
+  const [className, setClassName] = useState("na")
 
 const handleClickOpen = (name,desc) => {
   setOpen(true);
