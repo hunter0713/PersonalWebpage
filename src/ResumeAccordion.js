@@ -50,8 +50,9 @@ export default function ResumeAccordion() {
   const [desc, setDesc] = useState("n/a");
   const [className, setClassName] = useState("n/a")
 
-const handleClickOpen = () => {
+const handleClickOpen = (name) => {
   setOpen(true);
+  setClassName(name)
   console.log("hi");
 };
 
@@ -64,13 +65,13 @@ const handleClose = () => {
     return (
       <React.Fragment>
         <Grid item xs={4}>
-          <Paper onClick={handleClickOpen} className={classes.paper}>{props.first}</Paper>
+          <Paper onClick={() => handleClickOpen(props.first)} className={classes.paper}>{props.first}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={handleClickOpen} className={classes.paper}>{props.second}</Paper>
+          <Paper onClick={() => handleClickOpen(props.second)} className={classes.paper}>{props.second}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={handleClickOpen} className={classes.paper}>{props.third}</Paper>
+          <Paper onClick={() => handleClickOpen(props.third)} className={classes.paper}>{props.third}</Paper>
         </Grid>
       </React.Fragment>
     );
