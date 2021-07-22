@@ -1,12 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter as Router } from 'react-router-dom'
-import {AppBar, Toolbar,IconButton,Typography,Button} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu'
+import {AppBar, Toolbar,Typography,Button} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
-import { useLocation } from "react-router-dom";
 const theme = createMuiTheme({
   palette: {
     type: "dark",

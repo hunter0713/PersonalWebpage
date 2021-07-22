@@ -14,7 +14,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
+import ResumeDetails from './ResumeDetails'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -170,48 +170,7 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={classes.alignAccordianContent}>
-          <Typography variant="h2" gutterBottom="true">
-            Hunter Cobb
-          </Typography>
-          <Typography variant="h5" className={classes.subHeader} paragraph="true">
-            Education:
-          </Typography>
-          <Typography variant="body1" inline>
-          Bachelor of Science in Computer Science(May 2021)
-          </Typography>
-          <Typography variant="body1" inline>
-          University of Kansas, Lawrence, KS
-          </Typography>
-          <Typography variant="body1" paragraph="true">
-          GPA: 3.31
-          </Typography>
-          <Typography variant="h5" className={classes.subHeader}>
-          Programming Competencies:
-          </Typography>
-          <Typography variant="body1" inline>
-          <ul>
-              <li>Languages: Javascript (React Framework), C++, PHP, Python, SQL, HTML/CSS</li>
-              <li>Databases: MySQL</li>
-              <li>Other Skills: Git, AWS Console, Docker, Figma, Linux, WSL, Jupyter</li>
-        </ul>
-          </Typography>
-          <Typography variant="h5" className={classes.subHeader} paragraph="true">
-            Work Experience:
-          </Typography>
-          <Typography variant="body2" inline>
-          Starbucks Coffee - Overland Park, KS
-          </Typography>
-          <Typography variant="body2" inline>
-          Barista Partner
-          </Typography>
-          <Typography variant="body2" inline paragraph="true">
-          August 2016 - August 2017
-          </Typography>
-          <Typography variant="body1" inline paragraph="true">
-          Interpersonal skills and teamwork including advising customers on what to purchase and fellow
-          employees on how to most efficiently help customers, keep the store clean, keep quality of product
-          and keep collected during peak business hours.
-          </Typography>
+        <ResumeDetails />
         </AccordionDetails>
       </Accordion>
     </div>

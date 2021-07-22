@@ -1,21 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter as Router } from 'react-router-dom'
-import {AppBar, Toolbar,IconButton,Typography,Button} from '@material-ui/core';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import MuiAccordion from '@material-ui/core/Accordion';
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
-import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
-import MenuIcon from '@material-ui/icons/Menu'
+import {AppBar, Toolbar,Typography,Button} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
-import { useLocation } from "react-router-dom";
 import ResumeAccordion from './ResumeAccordion'
 const theme = createMuiTheme({
   palette: {
@@ -56,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Resume(props) {
   const classes = useStyles();
   const history = useHistory();
-  const [classDesc, setClassDesc] = useState(false);
 
 
   function goToResume(){
