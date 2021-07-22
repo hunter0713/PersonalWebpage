@@ -1,10 +1,17 @@
 import React from 'react';
+import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
+import Button from '@material-ui/core/Button';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -39,18 +46,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ResumeAccordion() {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const [desc, setDesc] = useState("n/a");
+  const [className, setClassName] = useState("n/a")
+
+const handleClickOpen = () => {
+  setOpen(true);
+  console.log("hi");
+};
+
+const handleClose = () => {
+  setOpen(false);
+};
+
 
   function FormRow(props) {
     return (
       <React.Fragment>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>{props.first}</Paper>
+          <Paper onClick={handleClickOpen} className={classes.paper}>{props.first}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>{props.second}</Paper>
+          <Paper onClick={handleClickOpen} className={classes.paper}>{props.second}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>{props.third}</Paper>
+          <Paper onClick={handleClickOpen} className={classes.paper}>{props.third}</Paper>
         </Grid>
       </React.Fragment>
     );
@@ -69,7 +89,7 @@ export default function ResumeAccordion() {
         <AccordionDetails>
         <Grid container spacing={1}>
 <Grid container item xs={12} spacing={3}>
-  <FormRow first="EECS 581/582: Senior Design" second="EECS 647: Intro to Database Systems" third="EECS 565: Intro Info and Cmptr Security"/>
+<FormRow first="EECS 581/582: Senior Design" second="EECS 647: Intro to Database Systems" third="EECS 565: Intro Info and Cmptr Security"/>
 </Grid>
 <Grid container item xs={12} spacing={3}>
   <FormRow first="EECS 649: Intro to Artificial Intelligence" second="EECS 660: Fundamentals of Computer Algorithms" third="EECS 563: Intro to Communication Networks"/>
@@ -80,6 +100,24 @@ export default function ResumeAccordion() {
 </Grid>
         </AccordionDetails>
       </Accordion>
+      <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">{className}</DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  {desc}
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                  Close
+                </Button>
+              </DialogActions>
+            </Dialog>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

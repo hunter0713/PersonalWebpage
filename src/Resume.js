@@ -5,6 +5,11 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from 'react-router-dom'
 import {AppBar, Toolbar,IconButton,Typography,Button} from '@material-ui/core';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -52,6 +57,8 @@ export default function Resume(props) {
   const classes = useStyles();
   const history = useHistory();
   const [classDesc, setClassDesc] = useState(false);
+
+
   function goToResume(){
     history.push({
        pathname: '/Resume',
