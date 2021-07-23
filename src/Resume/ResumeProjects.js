@@ -122,6 +122,16 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
                 <DialogContentText id="alert-dialog-description">
                   {desc}
                 </DialogContentText>
+                <iframe
+                  id="video"
+                  title="video"
+                  width="230"
+                  heigh="154"
+                  src={"https://www.youtube.com/embed/sE_6-ZB4794"}
+                  frameBorder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose} color="primary">

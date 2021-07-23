@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import ResumeDetails from './ResumeDetails';
 import ResumeClasses from './ResumeClasses';
+import ResumeProjects from './ResumeProjects';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,17 +68,7 @@ export default function ResumeAccordion() {
           <Typography className={classes.heading}>Projects</Typography>
         </AccordionSummary>
         <AccordionDetails>
-        <Grid container spacing={1}>
-<Grid container item xs={12} spacing={3}>
-
-</Grid>
-<Grid container item xs={12} spacing={3}>
-
-</Grid>
-<Grid container item xs={12} spacing={3}>
-
-</Grid>
-</Grid>
+        <ResumeProjects/>
         </AccordionDetails>
       </Accordion>
       <Accordion>
