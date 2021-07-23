@@ -47,7 +47,8 @@ export default function ResumeAccordion() {
   const [desc, setDesc] = useState("n/a");
   const [className, setClassName] = useState("na");
   const [technologies, setTechnologies] = useState("na");
-  const [videoExt, setVideoExt] = useState("");
+  const [videoExt, setVideoExt] = useState("f");
+  const [hasVideo, setHasVideo] = useState(false);
 
 const handleClickOpen = (name,desc,tech,ext) => {
   setOpen(true);
@@ -56,10 +57,17 @@ const handleClickOpen = (name,desc,tech,ext) => {
   setTechnologies(tech);
   setVideoExt(ext);
   console.log("hi");
+  if(ext !== "f"){
+    setHasVideo(true);
+  }
+  else{
+    setHasVideo(false);
+  }
 };
 
 const handleClose = () => {
   setOpen(false);
+  setHasVideo(false);
 };
 
 
@@ -70,7 +78,10 @@ const handleClose = () => {
           <Paper onClick={() => handleClickOpen(props.first,props.firstDesc,props.firstTech,props.firstVideo)} className={classes.paper} style={{ cursor: "pointer" }}>{props.first}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.second,props.secondDesc,props.secondTech)} className={classes.paper}style={{ cursor: "pointer" }}>{props.second}</Paper>
+          <Paper onClick={() => handleClickOpen(props.second,props.secondDesc,props.secondTech,"f")} className={classes.paper}style={{ cursor: "pointer" }}>{props.second}</Paper>
+        </Grid>
+        <Grid item xs={4}>
+          <Paper onClick={() => handleClickOpen(props.third,props.thirdDesc,props.thirdTech,"f")} className={classes.paper}style={{ cursor: "pointer" }}>{props.third}</Paper>
         </Grid>
       </React.Fragment>
     );
@@ -90,6 +101,9 @@ firstVideo="sE_6-ZB4794"
 second="SquadUp Android App"
 secondDesc="Final Project for EECS448: Software Engineering. Mock-Up pickup basketball application designed with KU students in mind. Utilizes PHP and Kotlin. Made using Android Studio IDE."
 secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
+third="StudentFirst"
+thirdDesc="An online learning application that connects Professors to their students through assignment distribution, and the ability for students to take assignments and submit their answers for the professor to review. Utilizes MySQL and PHP/Bootstrap."
+thirdTech="PHP, MySQL, Bootstrap"
 />
 </Grid>
 {/*<Grid container item xs={12} spacing={3}>
@@ -127,7 +141,8 @@ secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
                   {"\n"}
                   Technologies: {technologies}
                 </DialogContentText>
-                <iframe
+                {hasVideo
+              ?  <iframe
                   id="video"
                   title="video"
                   width="550"
@@ -137,6 +152,8 @@ secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
                   allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
+                :<Typography> </Typography>
+              }
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose} color="primary">
