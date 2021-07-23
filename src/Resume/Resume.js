@@ -77,7 +77,7 @@ As a motivated and recently graduated software engineer, I’m extremely excited
 positions that fit my skills and ability. Over my career at the University of Kansas, I've
 completed a collection of courses and projects that make me a good fit for many software positions
 that include not only software literacy but also team and leadership skills. Below, I've listed my resume
-as well as all related coursework I completed in my time in college.
+as well as a selection of related coursework and projects I completed while at KU.
 </Typography>
 <ResumeAccordion />
 
