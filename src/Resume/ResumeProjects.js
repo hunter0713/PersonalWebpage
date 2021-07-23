@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react'
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -49,13 +50,15 @@ export default function ResumeAccordion() {
   const [technologies, setTechnologies] = useState("na");
   const [videoExt, setVideoExt] = useState("f");
   const [hasVideo, setHasVideo] = useState(false);
+  const [githublink,setGithubLink] = useState("");
 
-const handleClickOpen = (name,desc,tech,ext) => {
+const handleClickOpen = (name,desc,tech,ext,githubLink) => {
   setOpen(true);
   setClassName(name);
   setDesc(desc);
   setTechnologies(tech);
   setVideoExt(ext);
+  setGithubLink(githubLink);
   console.log("hi");
   if(ext !== "f"){
     setHasVideo(true);
@@ -75,13 +78,13 @@ const handleClose = () => {
     return (
       <React.Fragment>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.first,props.firstDesc,props.firstTech,props.firstVideo)} className={classes.paper} style={{ cursor: "pointer" }}>{props.first}</Paper>
+          <Paper onClick={() => handleClickOpen(props.first,props.firstDesc,props.firstTech,props.firstVideo,props.firstGithubLink)} className={classes.paper} style={{ cursor: "pointer" }}>{props.first}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.second,props.secondDesc,props.secondTech,"f")} className={classes.paper}style={{ cursor: "pointer" }}>{props.second}</Paper>
+          <Paper onClick={() => handleClickOpen(props.second,props.secondDesc,props.secondTech,"f",props.secondGithubLink)} className={classes.paper}style={{ cursor: "pointer" }}>{props.second}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.third,props.thirdDesc,props.thirdTech,"f")} className={classes.paper}style={{ cursor: "pointer" }}>{props.third}</Paper>
+          <Paper onClick={() => handleClickOpen(props.third,props.thirdDesc,props.thirdTech,"f",props.thirdGithubLink)} className={classes.paper}style={{ cursor: "pointer" }}>{props.third}</Paper>
         </Grid>
       </React.Fragment>
     );
@@ -98,12 +101,15 @@ first="UpNext React App"
 firstDesc="A social media focused application allowing students to connect with university organizations and professors with the ultimate intent of promoting the stress-free organization of a student’s responsibilities and deadlines."
 firstTech="React JS, MySQL database, Knex JS, Docker Container"
 firstVideo="sE_6-ZB4794"
+firstGithubLink="/githubUpNext"
 second="SquadUp Android App"
 secondDesc="Final Project for EECS448: Software Engineering. Mock-Up pickup basketball application designed with KU students in mind. Utilizes PHP and Kotlin. Made using Android Studio IDE."
 secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
+secondGithubLink="/githubSquadUp"
 third="StudentFirst"
 thirdDesc="An online learning application that connects Professors to their students through assignment distribution, and the ability for students to take assignments and submit their answers for the professor to review. Utilizes MySQL and PHP/Bootstrap."
 thirdTech="PHP, MySQL, Bootstrap"
+thirdGithubLink="/githubStudentFirst"
 />
 </Grid>
 {/*<Grid container item xs={12} spacing={3}>
@@ -140,6 +146,8 @@ thirdTech="PHP, MySQL, Bootstrap"
                   {desc}
                   {"\n"}
                   Technologies: {technologies}
+                  {"\n"}
+                  <Link to={githublink}>Github Repository</Link>
                 </DialogContentText>
                 {hasVideo
               ?  <iframe

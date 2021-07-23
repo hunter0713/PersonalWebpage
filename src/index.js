@@ -23,6 +23,21 @@ ReactDOM.render(
      return null;
 }}
   />
+  <Route exact path="/githubUpNext" component={() => {
+     window.location.href = 'https://github.com/giangpro93/UpNext/tree/main/app/ui';
+     return null;
+}}
+  />
+  <Route exact path="/githubSquadUp" component={() => {
+     window.location.href = 'https://github.com/hunter0713/Squadup_Android_App';
+     return null;
+}}
+  />
+  <Route exact path="/githubStudentFirst" component={() => {
+     window.location.href = 'https://github.com/hunter0713/StudentFirst-EECS_647-Project-';
+     return null;
+}}
+  />
     </Switch>
 
   </BrowserRouter>,
