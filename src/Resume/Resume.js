@@ -1,4 +1,3 @@
-import './App.css';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar,Typography,Button} from '@material-ui/core';
@@ -72,6 +71,7 @@ export default function Resume(props) {
 <Typography variant="h6" className={classes.title}>
 Hunter Cobb's Resume
 </Typography>
+
 <Typography variant="body1" className={classes.introduction}>
 As a motivated and recently graduated software engineer, I’m extremely excited to contribute under
 positions that fit my skills and ability. Over my career at the University of Kansas, I've

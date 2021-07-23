@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Resume from './Resume'
+import Resume from './Resume/Resume'
 import HomePage from './HomePage'
 import { BrowserRouter ,Switch,Route} from "react-router-dom";
 
@@ -19,7 +19,7 @@ ReactDOM.render(
     <Resume />
   </Route>
   <Route exact path="/github" component={() => {
-     window.location.href = 'https://github.com/hunter0713'; 
+     window.location.href = 'https://github.com/hunter0713';
      return null;
 }}
   />

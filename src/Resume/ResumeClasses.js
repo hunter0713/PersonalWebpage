@@ -1,12 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
 import Button from '@material-ui/core/Button';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -14,13 +9,11 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ResumeDetails from './ResumeDetails'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '80%',
     flexGrow: 1,
-    marginLeft: theme.spacing(20),
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -65,7 +58,7 @@ const handleClose = () => {
 };
 
 
-  function FormRow(props) {
+  function FormRowClasses(props) {
     return (
       <React.Fragment>
         <Grid item xs={4}>
@@ -81,20 +74,13 @@ const handleClose = () => {
     );
   }
 
+
+
   return (
     <div className={classes.root}>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>Classes</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
         <Grid container spacing={1}>
 <Grid container item xs={12} spacing={3}>
-<FormRow
+<FormRowClasses
 first="EECS 581/582: Senior Design"
 firstDesc="The design and implementation phase of a two-semester, team-orientated lecture/laboratory course involving the specification, design, implementation, and documentation of a significant software system. The course includes the consideration of project management, ethics, economics, and technical writing."
 second="EECS 647: Intro to Database Systems"
@@ -104,7 +90,7 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
 />
 </Grid>
 <Grid container item xs={12} spacing={3}>
-  <FormRow
+  <FormRowClasses
   first="EECS 649: Intro to Artificial Intelligence"
   firstDesc="General concepts, search procedures, two-person games, predicate calculus and automated theorem proving, nonmonotonic logic, probabilistic reasoning, rule based systems, semantic networks, frames, dynamic memory, planning, machine learning, natural language understanding, neural networks."
   second="EECS 660: Fundamentals of Computer Algorithms"
@@ -114,7 +100,7 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
   />
 </Grid>
 <Grid container item xs={12} spacing={3}>
-  <FormRow
+  <FormRowClasses
   first="EECS 560: Data Structures"
   firstDesc="Data abstraction and abstract data types. Topics include the design and implementation of dictionary, priority queues, concatenated queue, disjoint set structures, graphs, and other advanced data structures based on balanced and unbalanced tree structures. Special emphasis will be placed on the implementations of these structures and their performance tradeoffs. Both asymptotic complexity analysis and experimental profiling techniques will be introduced. Labs will be used to provide students with hands-on experience in the implementations of various abstract data types and to perform experimental performance analysis."
   second="EECS 665: Compiler Construction"
@@ -124,8 +110,7 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
   />
 </Grid>
 </Grid>
-        </AccordionDetails>
-      </Accordion>
+
       <Dialog
               open={open}
               onClose={handleClose}
@@ -137,6 +122,16 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
                 <DialogContentText id="alert-dialog-description">
                   {desc}
                 </DialogContentText>
+                <iframe
+                  id="video"
+                  title="video"
+                  width="230"
+                  heigh="154"
+                  src={"https://www.youtube.com/embed/sE_6-ZB4794"}
+                  frameBorder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose} color="primary">
@@ -144,35 +139,6 @@ thirdDesc="An introduction to the fundamentals of cryptography and information a
                 </Button>
               </DialogActions>
             </Dialog>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography className={classes.heading}>Projects</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
-        >
-          <Typography className={classes.heading}>
-          Resume
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails className={classes.alignAccordianContent}>
-        <ResumeDetails />
-        </AccordionDetails>
-      </Accordion>
     </div>
   );
 }
