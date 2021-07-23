@@ -63,7 +63,7 @@ const handleClose = () => {
 };
 
 
-  function FormRowClasses(props) {
+  function FormRowProjects(props) {
     return (
       <React.Fragment>
         <Grid item xs={4}>
@@ -82,7 +82,7 @@ const handleClose = () => {
     <div className={classes.root}>
         <Grid container spacing={1}>
 <Grid container item xs={12} spacing={3}>
-<FormRowClasses
+<FormRowProjects
 first="UpNext React App"
 firstDesc="A social media focused application allowing students to connect with university organizations and professors with the ultimate intent of promoting the stress-free organization of a student’s responsibilities and deadlines."
 firstTech="React JS, MySQL database, Knex JS, Docker Container"
@@ -93,7 +93,7 @@ secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
 />
 </Grid>
 {/*<Grid container item xs={12} spacing={3}>
-  <FormRowClasses
+  <FormRowProjects
   first="EECS 649: Intro to Artificial Intelligence"
   firstDesc="General concepts, search procedures, two-person games, predicate calculus and automated theorem proving, nonmonotonic logic, probabilistic reasoning, rule based systems, semantic networks, frames, dynamic memory, planning, machine learning, natural language understanding, neural networks."
   second="EECS 660: Fundamentals of Computer Algorithms"
@@ -103,7 +103,7 @@ secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
   />
 </Grid>
 <Grid container item xs={12} spacing={3}>
-  <FormRowClasses
+  <FormRowProjects
   first="EECS 560: Data Structures"
   firstDesc="Data abstraction and abstract data types. Topics include the design and implementation of dictionary, priority queues, concatenated queue, disjoint set structures, graphs, and other advanced data structures based on balanced and unbalanced tree structures. Special emphasis will be placed on the implementations of these structures and their performance tradeoffs. Both asymptotic complexity analysis and experimental profiling techniques will be introduced. Labs will be used to provide students with hands-on experience in the implementations of various abstract data types and to perform experimental performance analysis."
   second="EECS 665: Compiler Construction"
