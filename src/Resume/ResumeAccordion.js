@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   background: "#76bac2"
 },
 },
+
   resumeTitle: {
     marginLeft: theme.spacing(50),
     marginRight: theme.spacing(50),
