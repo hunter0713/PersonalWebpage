@@ -78,7 +78,7 @@ export default function ResumeDetails() {
     <Typography variant="body1" inline paragraph="true">
     Interpersonal skills and teamwork including advising customers on what to purchase and fellow
     employees on how to most efficiently help customers, keep the store clean, keep quality of product
-    and keep collected during peak business hours.
+    and keep collected during business hours.
     </Typography>
     </div>
   );
