@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '80%',
     flexGrow: 1,
-    marginLeft: "20%",
-    marginRight: "20%",
+    marginLeft: "10%",
+    marginRight: "10%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
