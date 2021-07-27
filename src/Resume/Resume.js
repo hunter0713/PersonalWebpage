@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
   introduction: {
     textAlign: "left",
-    marginLeft: theme.spacing(50),
-    marginRight: theme.spacing(50),
+    marginLeft: '20%',
+    marginRight: '20%',
     marginTop: theme.spacing(4),
 
   },
