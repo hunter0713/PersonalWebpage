@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Resume from './Resume/Resume'
-import HomePage from './HomePage'
+import HomePage from './HomePage/HomePage'
 import { BrowserRouter ,Switch,Route} from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
@@ -35,6 +35,11 @@ ReactDOM.render(
   />
   <Route exact path="/githubStudentFirst" component={() => {
      window.location.href = 'https://github.com/hunter0713/StudentFirst-EECS_647-Project-';
+     return null;
+}}
+  />
+  <Route exact path="/studentFirstPage" component={() => {
+     window.location.href = 'https://tinyurl.com/studentsfirst2020';
      return null;
 }}
   />

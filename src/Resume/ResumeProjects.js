@@ -51,20 +51,28 @@ export default function ResumeAccordion() {
   const [videoExt, setVideoExt] = useState("f");
   const [hasVideo, setHasVideo] = useState(false);
   const [githublink,setGithubLink] = useState("");
-
-const handleClickOpen = (name,desc,tech,ext,githubLink) => {
+  const [pageLink,setPageLink] = useState("f");
+  const [hasPage,setHasPage] = useState(false);
+const handleClickOpen = (name,desc,tech,ext,githubLink,linkToSite) => {
   setOpen(true);
   setClassName(name);
   setDesc(desc);
   setTechnologies(tech);
   setVideoExt(ext);
   setGithubLink(githubLink);
+  setPageLink(linkToSite);
   console.log("hi");
   if(ext !== "f"){
     setHasVideo(true);
   }
   else{
     setHasVideo(false);
+  }
+  if(linkToSite !== "f"){
+    setHasPage(true);
+  }
+  else{
+    setHasPage(false);
   }
 };
 
@@ -78,13 +86,13 @@ const handleClose = () => {
     return (
       <React.Fragment>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.first,props.firstDesc,props.firstTech,props.firstVideo,props.firstGithubLink)} className={classes.paper} style={{ cursor: "pointer" }}>{props.first}</Paper>
+          <Paper onClick={() => handleClickOpen(props.first,props.firstDesc,props.firstTech,props.firstVideo,props.firstGithubLink,"f")} className={classes.paper} style={{ cursor: "pointer" }}>{props.first}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.second,props.secondDesc,props.secondTech,"f",props.secondGithubLink)} className={classes.paper}style={{ cursor: "pointer" }}>{props.second}</Paper>
+          <Paper onClick={() => handleClickOpen(props.second,props.secondDesc,props.secondTech,"f",props.secondGithubLink,"f")} className={classes.paper}style={{ cursor: "pointer" }}>{props.second}</Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper onClick={() => handleClickOpen(props.third,props.thirdDesc,props.thirdTech,"f",props.thirdGithubLink)} className={classes.paper}style={{ cursor: "pointer" }}>{props.third}</Paper>
+          <Paper onClick={() => handleClickOpen(props.third,props.thirdDesc,props.thirdTech,"f",props.thirdGithubLink,props.thirdLinkToSite)} className={classes.paper}style={{ cursor: "pointer" }}>{props.third}</Paper>
         </Grid>
       </React.Fragment>
     );
@@ -108,30 +116,11 @@ secondTech="HTML, Kotlin, PHP, MySQL, Java, Android Studio"
 secondGithubLink="/githubSquadUp"
 third="StudentFirst"
 thirdDesc="An online learning application that connects Professors to their students through assignment distribution, and the ability for students to take assignments and submit their answers for the professor to review. Utilizes MySQL and PHP/Bootstrap."
-thirdTech="PHP, MySQL, Bootstrap"
+thirdTech="PHP, MySQL, Bootstrap, AWS EC2"
 thirdGithubLink="/githubStudentFirst"
+thirdLinkToSite="/studentFirstPage"
 />
 </Grid>
-{/*<Grid container item xs={12} spacing={3}>
-  <FormRowProjects
-  first="EECS 649: Intro to Artificial Intelligence"
-  firstDesc="General concepts, search procedures, two-person games, predicate calculus and automated theorem proving, nonmonotonic logic, probabilistic reasoning, rule based systems, semantic networks, frames, dynamic memory, planning, machine learning, natural language understanding, neural networks."
-  second="EECS 660: Fundamentals of Computer Algorithms"
-  secondDesc="Basic concepts and techniques in the design and analysis of computer algorithms. Models of computations. Simple lower bound theory and optimality of algorithms. Computationally hard problems and the theory of NP-Completeness."
-  third="EECS 563: Intro to Communication Networks"
-  thirdDesc="An introduction to the principles used in communication networks is given in this course. Topics include a discussion of the uses of communications networks, network traffic, network impairments, standards, layered reference models for organizing network functions. Local Area Network technology and protocols are discussed. Link, network, transport layer protocols, and security are introduced. TCP/IP networks are stressed. VoIP is used as an example throughout the course. Basic concepts of network performance evaluation are studied, both analytical and simulation techniques are considered."
-  />
-</Grid>
-<Grid container item xs={12} spacing={3}>
-  <FormRowProjects
-  first="EECS 560: Data Structures"
-  firstDesc="Data abstraction and abstract data types. Topics include the design and implementation of dictionary, priority queues, concatenated queue, disjoint set structures, graphs, and other advanced data structures based on balanced and unbalanced tree structures. Special emphasis will be placed on the implementations of these structures and their performance tradeoffs. Both asymptotic complexity analysis and experimental profiling techniques will be introduced. Labs will be used to provide students with hands-on experience in the implementations of various abstract data types and to perform experimental performance analysis."
-  second="EECS 665: Compiler Construction"
-  secondDesc="Compilation of simple expressions and statements. Organization of a compiler including symbol tables, lexical analysis, syntax analysis, intermediate and object code generation, error diagnostics, code optimization techniques and run-time structures in a block-structured language such as PASCAL or C. Programming assignments include using tools for lexer and parser generator, and intermediate , and object code generation techniques. Laboratory exercises will provide hands-on experience with the tools and concepts required for the programming assignments."
-  third="EECS 662: Programming Languages"
-  thirdDesc="Formal definition of programming languages including specification of syntax and semantics. Simple statements including precedence, infix, prefix, and postfix notation. Global properties of algorithmic languages including scope of declaration, storage allocation, grouping of statements, binding time of constituents, subroutines, coroutines, and tasks. Run-time representation of program and data structures."
-  />
-</Grid> */}
 </Grid>
 
       <Dialog
@@ -148,6 +137,12 @@ thirdGithubLink="/githubStudentFirst"
                   Technologies: {technologies}
                   {"\n"}
                   <Link to={githublink}>Github Repository</Link>
+                    {"\n"}
+                    {hasPage
+                    ? <Link to={pageLink}>Visit Site(Hosted on AWS EC2)</Link>
+                    : <div> </div>
+                  }
+
                 </DialogContentText>
                 {hasVideo
               ?  <iframe
@@ -162,6 +157,7 @@ thirdGithubLink="/githubStudentFirst"
                 />
                 :<Typography> </Typography>
               }
+
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose} color="primary">
