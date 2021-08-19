@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   carousel: {
     textAlign: "center",
     flexGrow: 1,
+    width: '80%'
   },
 }));
 export default function HomePage(props) {
@@ -77,7 +78,7 @@ export default function HomePage(props) {
 <div className={classes.paragraph}>
 <Typography variant='p'>
 This is my personal website! Made using ReactJS and MaterialUI this website is hosted on AWS using AWS Amplify. Below are some images that
-encapsulate me as a person and above are links to my github and a resume page that shows off a selection of my prior coursework and projects
+represent me and above are links to my github and a resume page that shows off a selection of my prior coursework and projects
 as well as a copy of my resume.
 </Typography>
 </div>
