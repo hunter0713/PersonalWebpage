@@ -5,7 +5,7 @@ import Carousel from 'react-material-ui-carousel'
 import {useHistory} from 'react-router-dom';
 import catImg from './Dash.jpg'
 import vacationImg from './Colorado.jpg'
-import gradPic from './GradPic.PNG'
+import gradPic from './GradPic.jpg'
 const theme = createMuiTheme({
   palette: {
     type: "dark",
